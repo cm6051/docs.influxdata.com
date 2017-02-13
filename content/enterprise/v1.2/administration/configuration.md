@@ -522,7 +522,10 @@ This setting applies to queries only.
 
 Environment variable: `INFLUXDB_CLUSTER_DIAL_TIMEOUT`
 
-###  shard-writer-timeout = "5s"
+###  shard-writer-timeout = "15s" | "5s"
+
+> Version 1.2.2 increases this setting from `5s` to `15s`.
+This setting should always be larger than the [`write-timeout` setting](#write-timeout-10s).
 
 The time in which a remote write to a single data node must complete after which
 the system returns a timeout error.
